@@ -7,11 +7,11 @@ public class Main {
 
         // Create a Tuple containing three items
         Tuple.OfThree<Integer, Double, String> twoNumbers = Tuple.of(1, 2.0, "3");
-        System.out.println(twoNumbers.item1() + ", " + twoNumbers.item2());
+        System.out.println(twoNumbers);
 
         // Use the var keyword to reduce long type declarations
         var twoNumbersAsVar = Tuple.of(1, 2.0, "3");
-        System.out.println(twoNumbersAsVar.item1() + ", " + twoNumbersAsVar.item2());
+        System.out.println(twoNumbersAsVar);
 
         // Tuples can be stored as a non-generic Tuple object,
         // however items can no longer be directly accessed
@@ -23,7 +23,7 @@ public class Main {
         Tuple someTupleAllIntegers = Tuple.of(1, 2, 3);
         someTuple.asThree(Integer.class).ifPresent(System.out::println);
 
-        // Tuples can be properly iterated over
+        // Tuples can be properly iterated over like so...
         Tuple sevenIntegers = Tuple.of(1, 2, 3, 4, 5, 6, 7);
         for (Tuple.TupleValue integer : sevenIntegers) {
             System.out.println(integer.value());
